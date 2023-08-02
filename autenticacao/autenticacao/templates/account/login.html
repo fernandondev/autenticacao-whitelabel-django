@@ -1,0 +1,205 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load account socialaccount %}
+
+
+{% block content %}
+
+{% get_providers as socialaccount_providers %}
+
+{% if socialaccount_providers %}
+
+
+<div class="socialaccount_ballot">
+
+  <ul class="socialaccount_providers">
+    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+  </ul>
+
+  <div class="login-or">{% trans 'or' %}</div>
+
+</div>
+
+{% include "socialaccount/snippets/login_extra.html" %}
+
+{% endif %}
+
+<div class="d-flex justify-content-center align-items-center mt-5">
+    <img src="{{url_imagem}}" width="600px" height="300px">
+</div>
+
+<div class="d-flex justify-content-center align-items-center mt-1">
+
+    <div class="card">
+
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item text-center">
+                  <a class="nav-link active btl" id="pills-home-tab" >Login</a>
+                </li>
+                <li class="nav-item text-center">
+                  <a class="nav-link btr" href="{{ signup_url }}" id="pills-profile-tab">Cadastrar</a>
+                </li>
+
+        </ul>
+
+
+
+              <div class="tab-content" id="pills-tabContent" >
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <form method="POST" action="{% url 'account_login' %}">
+                      {% csrf_token %}
+                      <div class="container">
+
+                          <div class="row mb-2 ms-4 me-4">
+                            {{ form.login }}
+                          </div>
+
+
+                          <div class="row mb-2 ms-4 me-4">
+                             {{ form.password }}
+                           </div>
+
+
+
+                      </div>
+
+                      <div class="container">
+
+
+                            {% if redirect_field_value %}
+
+                              <input
+                                type="hidden"
+                                name="{{ redirect_field_name }}"
+                                value="{{ redirect_field_value }}"
+                              />
+                              {% endif %}
+
+
+
+                         <div class="row mb-5 ms-1 me-1 mt-3 pt-5">
+                            <button class="btn btn-primary" type="submit">{% trans "Login" %}</button>
+                         </div>
+                      </div>
+
+                        {% if form.errors %}
+                      <ul class="text-error">
+                          {% for field in form %}
+                          {% for error in field.errors %}
+
+                          <li><span class="alert alert-danger" >{{ error|escape }}</span></li>
+
+
+                          {% endfor %}
+                          {% endfor %}
+
+                          {% for error in form.non_field_errors %}
+
+                          <li><span class="alert alert-danger mb-5" >{{ error|escape }}</span></li>
+
+                          {% endfor %}
+                      </ul>
+
+                        {% endif %}
+
+                     </form>
+              </div>
+
+
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+
+                  <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                      {% csrf_token %}
+                      <div class="container">
+
+                          <div class="row mb-2 ms-4 me-4">
+                            {{ form.username }}
+                          </div>
+
+                          <div class="row mb-2 ms-4 me-4">
+                            <span class="text-error">{{ form.username.errors }}</span>
+                           </div>
+
+                          <div class="row mb-2 ms-4 me-4">
+                             {{ form.password1 }}
+                           </div>
+
+                          <div class="row mb-2 ms-4 me-4">
+                            <span class="text-error">{{ form.password1.errors }}</span>
+                           </div>
+
+                          <div class="row mb-2 ms-4 me-4">
+                             {{ form.password2 }}
+                           </div>
+
+                          <div class="row mb-2 ms-4 me-4">
+                            <span class="text-error">{{ form.password2.errors }}</span>
+                           </div>
+
+                      </div>
+
+                      <div class="container">
+
+
+                            {% if redirect_field_value %}
+
+                              <input
+                                type="hidden"
+                                name="{{ redirect_field_name }}"
+                                value="{{ redirect_field_value }}"
+                              />
+                              {% endif %}
+
+
+
+                         <div class="row mb-5 ms-1 me-1 mt-3 pt-5">
+                            <button class="btn btn-primary" type="submit">{% trans "Cadastrar" %}</button>
+                         </div>
+
+                      </div>
+
+                        {% if form.errors %}
+                      <ul class="text-error">
+                          {% for field in form %}
+                          {% for error in field.errors %}
+
+                          <li><span class="alert alert-danger">{{ error|escape }}</span></li>
+
+
+                          {% endfor %}
+                          {% endfor %}
+
+                          {% for error in form.non_field_errors %}
+
+                          <li><span class="alert alert-danger mb-5">{{ error|escape }}</span></li>
+
+                          {% endfor %}
+                      </ul>
+
+                        {% endif %}
+
+                     </form>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}

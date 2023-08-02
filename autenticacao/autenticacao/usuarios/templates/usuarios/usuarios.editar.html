@@ -1,0 +1,105 @@
+{% extends 'template-padrao.html' %}
+
+{% block titulo %} Usuários {% endblock titulo %}
+
+{% block conteudo %}
+
+
+<div class="d-flex justify-content-center">
+    <div class="container-fluid border  border-3 rounded-5 mt-4 mb-1 ms-2 me-2" style="width:50rem; border-radius: 10px; border-opacity: 0.7; margin: auto;">
+        <form method="POST" action="{% url 'editar' %}">
+            {% csrf_token %}
+
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control" id="email" name="email" aria-describedby="email" placeholder="Email" value="{{usuario.email}}">
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="password">Senha</label>
+                                <input type="password" class="form-control" id="password" name="password" aria-describedby="password" placeholder="Senha" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="first_name">Nome</label>
+                                <input type="text" class="form-control" id="first_name" name="first_name" aria-describedby="first_name" placeholder="Primeiro nome" value="{{usuario.first_name}}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="row justify-content-md-center">
+                            <div class="col-md-auto">
+                                <button type="submit" class="btn btn-primary btn-lg" style="padding-right:300px; padding-left:300px">Atualizar</button>
+                            </div>
+
+
+                    </div>
+                    <div class="row justify-content-md-center">
+                            <div class="col-md-auto">
+                                {% if form.errors %}
+                                  <ul class="text-error">
+                                      {% for field in form %}
+                                      {% for error in field.errors %}
+
+                                      <li><span class="alert alert-danger" >{{ error|escape }}</span></li>
+
+
+                                      {% endfor %}
+                                      {% endfor %}
+
+                                      {% for error in form.non_field_errors %}
+
+                                      <li><span class="alert alert-danger mb-5" >{{ error|escape }}</span></li>
+
+                                      {% endfor %}
+                                  </ul>
+
+                                  {% endif %}
+                                {% if email_cadastrado %}
+                                  <ul class="text-error">
+                                      <li><span class="alert alert-danger" >Esse email já foi cadastrado. Escolha outro por favor.</span></li>
+
+                                  </ul>
+
+                                  {% endif %}
+
+                            </div>
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+        </form>
+
+                <hr>
+    </div>
+
+
+
+</div>
+            <hr>
+
+
+
+
+
+
+
+</div>
+
+
+{% endblock conteudo %}
