@@ -182,7 +182,7 @@ Essa api pode ser usada por diferentes empresas ( unidades ), com seus respectiv
     <li><p>Se eu criar uma unidade com o 'nome' 'xpto', deveria acessá-la pela path 'http://xpto.localhost:8000/accounts/login/'</p></li>
   </ul>
     <br>
-   <img src="prints\unidade.png" alt="Logo" ">
+   <img src="prints\admin.png" alt="Logo" ">
   <br>
   <br>
   <br>
