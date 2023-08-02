@@ -14,6 +14,7 @@ Essa api pode ser usada por diferentes empresas ( unidades ), com seus respectiv
 *    <p><strong>Docker: </strong></p> Sim </p>
 *    <p><strong>Testes unitários: </strong></p> Sim </p>
 *    <p><strong>Proteção contra ataque CSRF: </strong></p><strong> Sim </p>
+*    <p><strong>Validação de inputs: </strong></p><strong> Sim </p>
 
   
 <h2>💻 Feito em</h2>
@@ -47,11 +48,19 @@ Essa api pode ser usada por diferentes empresas ( unidades ), com seus respectiv
   <ul>
     <li><h5>PATH : 'http://adidas.localhost:8000/accounts/login/'</h56></li>
     <li><p>O usuário deverá preencher o email e senha e clicar em logar, para se autenticar</p></li>
+    <li><p>Se obtiver sucesso, redirecionará para a página inicial ( de informações do usuário logado )</p></li>
+    <li><p>A imagem da tela de login será obtida com base no subdomínio passado</p></li>
   </ul>
+  <br>
+  <h5>Se 'http://adidas.localhost:8000/accounts/login/'</h5>
   <br>
    <img src="prints\login-adidas.png" alt="Logo">
    <br>
+  <h5>Se 'http://nike.localhost:8000/accounts/login/'</h5>
+   <br>
    <img src="prints\login-nike.png" alt="Logo" >
+   <br>
+  <h5>Se 'http://puma.localhost:8000/accounts/login/'</h5>
    <br>
    <img src="prints\login-puma.png" alt="Logo" >
    <br>
@@ -61,13 +70,15 @@ Essa api pode ser usada por diferentes empresas ( unidades ), com seus respectiv
 
 
   <h3>*Login validação input</h3>
+  <ul>
+    <li>Os inputs serão validados</li>
+    
+  </ul>
 
   <br>
    <img src="prints\login-email-incorreto.png" alt="Logo" >
    <br>
    <img src="prints\login-email-invalido.png" alt="Logo">
-   <br>
-   <img src="prints\login-puma.png" alt="Logo" >
    <br>
   <br>
   <br>
@@ -79,6 +90,7 @@ Essa api pode ser usada por diferentes empresas ( unidades ), com seus respectiv
   <ul>
     <li><h5>PATH 'http://adidas.localhost:8000/accounts/signup/'</h56></li>
     <li><p>Nessa tela, o usuário preencherá o nome, email e senha para se cadastrar no sistema</p></li>
+    <li><p>Se a validação for ok, logará o usuário e redirecionará para a página inicial ( de informações do usuário logado )</p></li>
 
   </ul>
   <br>
@@ -90,6 +102,10 @@ Essa api pode ser usada por diferentes empresas ( unidades ), com seus respectiv
 
 
   <h3>*Cadastro validação input</h3>
+  <ul>
+    <li>Os inputs serão validados</li>
+    
+  </ul>
   <br>
    <img src="prints\cadastro-email-ja-cadastrado.png" alt="Logo" >
    <br>
@@ -107,6 +123,7 @@ Essa api pode ser usada por diferentes empresas ( unidades ), com seus respectiv
   <h3>*Dados do usuário ( Página Inicial ):</h3>
   <ul>
     <li><h5>PATH 'http://adidas.localhost:8000/'</h56></li>
+    <li><p>Nessa página serão descritas informações sobre o usuário logado</p></li>
   </ul>
   <br>
    <img src="prints\usuario-adidas.png" alt="Logo" >
@@ -139,7 +156,7 @@ Essa api pode ser usada por diferentes empresas ( unidades ), com seus respectiv
   
   <h3>*Deletar usuário:</h3>
   <ul>
-    <li><p>Ao clicar em 'deletar', o usuário será deletado, será deslogado e redirecionado para a página de logi</p></li>
+    <li><p>Ao clicar em 'deletar', o usuário será deletado, será deslogado e redirecionado para a página de login</p></li>
   </ul>
   <br>
    <img src="prints\deletar.png" alt="Logo" >
