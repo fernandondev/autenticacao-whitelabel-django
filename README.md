@@ -15,6 +15,7 @@ Essa api pode ser usada por diferentes empresas ( unidades ), com seus respectiv
 *    <p><strong>Testes unitários: </strong></p> Sim </p>
 *    <p><strong>Proteção contra ataque CSRF: </strong></p><strong> Sim </p>
 *    <p><strong>Validação de inputs: </strong></p><strong> Sim </p>
+*    <p><strong>Permite cadastro de novas unidades: </strong></p><strong> Sim, a partir do painel admin. Será descrito a seguir. </p>
 
   
 <h2>💻 Feito em</h2>
@@ -170,6 +171,18 @@ Essa api pode ser usada por diferentes empresas ( unidades ), com seus respectiv
   </ul>
     <br>
    <img src="prints\deslogar.png" alt="Logo" ">
+  <br>
+  <br>
+  <br>
+  
+   <h3>*Adição de unidades:</h3>
+  <ul>
+    <li><h5>Path: 'http://localhost:8000/admin/login/?next=/admin/usuarios/unidade/add/'</h5></li>
+    <li><p>Deve-se preencher o nome da unidade (será o subdomínio) e inserir um link da logo da unidade</p></li>
+    <li><p>Se eu criar uma unidade com o 'nome' 'xpto', deveria acessá-la pela path 'http://xpto.localhost:8000/accounts/login/'</p></li>
+  </ul>
+    <br>
+   <img src="prints\unidade.png" alt="Logo" ">
   <br>
   <br>
   <br>
