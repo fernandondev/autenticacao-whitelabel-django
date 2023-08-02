@@ -20,6 +20,7 @@ Essa api pode ser usada por diferentes empresas ( unidades ), com seus respectiv
 <h2>💻 Feito em</h2>
 
 *   Django
+*   Usando a biblioteca <strong>AllAuth</strong>
 
   <h2>Contas Default</h2>
   <p><strong>url</strong>: http://nike.localhost:8000/accounts/login/</p>
