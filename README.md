@@ -43,7 +43,7 @@ Essa api pode ser usada por diferentes empresas ( unidades ), com seus respectiv
 
 <h3>*Login</h3>
   <ul>
-    <li><h5>PATH : '/paginaLogin'</h56></li>
+    <li><h5>PATH : 'http://adidas.localhost:8000/accounts/login/'</h56></li>
     <li><p>O usuário deverá preencher o email e senha e clicar em logar, para se autenticar</p></li>
   </ul>
   <br>
