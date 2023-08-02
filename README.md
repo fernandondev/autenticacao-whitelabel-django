@@ -9,6 +9,9 @@ Essa api pode ser usada por diferentes empresas ( unidades ), com seus respectiv
   <h2> Especificações da api</h2>
 
 *   <p><strong>Arquitetura de software: </strong></p><strong>* MVT</strong> </p>
+*    <p><strong>User customizado: </strong></p>* Foi necessário modificar a classe de autenticação padrão do Django Auth para a model <strong>Usuario</strong> </p>
+*    <p><strong>Sistema de Whitelabel: </strong></p> Cada empresa é representada pela model <strong> Unidade</strong>. O reconhecimento de cada <strong>Unidade</strong> se dá a partir do <strong>subdomínio</strong> passado. O subdomínio é a propriedade <strong>'nome'</strong> da model <strong>'Unidade'</strong></p>
+*    <p><strong>Arquitetura de software: </strong></p><strong>* MVT</strong> </p>
 
   
 <h2>💻 Feito em</h2>
