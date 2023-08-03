@@ -35,7 +35,7 @@ def editar_usuario_logado_pagina(request):
             password = form.cleaned_data['password']
 
             lista_usuarios_com_esse_email = Usuario.objects.filter(email=email)
-            if lista_usuarios_com_esse_email.count() > 1 and usuario.email != email:
+            if lista_usuarios_com_esse_email.count() > 0 and usuario.email != email:
                 usuario = Usuario()
                 usuario.email = form.cleaned_data['email']
                 usuario.first_name = form.cleaned_data['first_name']
