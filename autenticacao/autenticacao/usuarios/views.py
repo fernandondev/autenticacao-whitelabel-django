@@ -33,7 +33,7 @@ def editar_usuario_logado_pagina(request):
             first_name = form.cleaned_data['first_name']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
-
+            #Bloqueia que o email escolhido seja igual à um email já existente
             lista_usuarios_com_esse_email = Usuario.objects.filter(email=email)
             if lista_usuarios_com_esse_email.count() > 0 and usuario.email != email:
                 usuario = Usuario()
